@@ -1,0 +1,39 @@
+selector: body
+properties:
+  title:
+    selector: h1.title
+    transform: trim
+  price:
+    selector: .product > .price
+    transform: trim
+  description:
+    selector: p.description
+    transform: trim
+  rating:
+    selector: .rating
+    properties:
+      score:
+        selector: .score
+        transform: [trim, number]
+      reviews:
+        selector: .reviews
+        transform: trim
+  features:
+    selector: ul.features li
+    type: array
+    items:
+      transform: trim
+  related_products:
+    selector: .product-card
+    type: array
+    items:
+      properties:
+        name:
+          selector: a.name
+          transform: trim
+        url:
+          selector: a.name
+          transform: attr(href)
+        price:
+          selector: .price
+          transform: trim
