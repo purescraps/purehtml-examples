@@ -1,0 +1,16 @@
+# extract the product urls from listing or product details pages
+
+selector: a.a-link-normal.a-text-normal[href]:not([aria-hidden]):not([aria-describedby])
+
+items:
+  transform: [
+    # extract the href attribute from anchors
+    attr(href),
+    # resolve relative paths to the url
+    resolve,
+    # remove all query parameters
+    removeUrlQueryParam,
+    # remove the `ref=foobar` section that's not needed at all
+    removeLastPathSection
+  ]
+

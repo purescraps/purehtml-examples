@@ -1,0 +1,13 @@
+# configuration to extract product details
+
+properties:
+  title: { selector: span#productTitle, transform: trim }
+  price: { selector: span.a-price.priceToPay, transform: trim }
+  features: { selector: '#feature-bullets li', items: { transform: trim } }
+  breadcrumbs:
+    selector: div#wayfinding-breadcrumbs_feature_div a
+    items:
+      properties:
+        title: {} # extract the innerText
+        url: { transform: [attr(href)] } # extract the href attribute
+
