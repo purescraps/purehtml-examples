@@ -1,12 +1,14 @@
 # purehtml go examples
 
-## ./parse
+## `./parse`
 
 This is a CLI tool that extracts data from HTML using the purehtml library. Here's  
 how to use it:
 
 Usage:  
+```sh
 ./parse -config <config.yaml> <input>
+```
 
 Arguments:
 
@@ -17,14 +19,20 @@ Examples:
 
 ### Parse a local HTML file
 
+```sh
 ./parse -config scraper.yaml page.html
+```
 
 ### Parse a remote URL
 
+```sh
 ./parse -config scraper.yaml https://example.com/page
+```
 
 ### Build and run in one command
 
+```sh
 go run ./parse -config config.yaml https://example.com
+```
 
 Output: The tool outputs extracted data as pretty-printed JSON to stdout.
